@@ -30,8 +30,8 @@ describe('white-list-sanitize', function() {
     it('should stript tags which cannot pass specified `only` test', function(done) {
       var input = [
         '<div>',
-        '<iframe src="http://hoge/com"></iframe>',
-        '<iframe src="//www.youtube.com/embed/N9qV3OvYuJY"></iframe>',
+        '  <iframe src="http://hoge/com"></iframe>',
+        '  <iframe src="//www.youtube.com/embed/N9qV3OvYuJY" frameborder="0"></iframe>',
         '</div>'
       ].join('');
       var opts = {
@@ -48,7 +48,7 @@ describe('white-list-sanitize', function() {
 
       sanitize(input, opts, function(err, res) {
         expect(err).to.be(null);
-        expect(res).to.equal('<div><iframe src="//www.youtube.com/embed/N9qV3OvYuJY"></iframe></div>');
+        expect(res).to.match(/<div>\s*<iframe src="\/\/www.youtube.com\/embed\/N9qV3OvYuJY"><\/iframe><\/div>/);
         done();
       });
     });

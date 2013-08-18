@@ -37,8 +37,8 @@ var opts = {
   allowedElements: {
     'div': true,
     'iframe': {
-      'only': function($elt) {
-        return $elt.attr('src').test(/^¥/¥/www¥.youtube¥.com¥/embed¥/[a-zA-Z0-9]+$/)
+      only: function($elt) {
+        return $elt.attr('src').test(/^\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9]+$/)
       }
     }
   },
