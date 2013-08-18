@@ -1,0 +1,33 @@
+{
+  "name": "white-list-sanitize",
+  "version": "0.0.1",
+  "description": "Sanitizer based on white list approach.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p-baleine/white-list-sanitize"
+  },
+  "keywords": [
+    "sanitize"
+  ],
+  "author": "p-baleine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/p-baleine/white-list-sanitize/issues"
+  },
+  "dependencies": {
+    "jsdom": "*",
+    "underscore": "*",
+    "async": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*"
+  },
+  "scripts": {
+    "postinstall": "wget http://code.jquery.com/jquery.js -O vendor/jquery.js"
+  }
+}
