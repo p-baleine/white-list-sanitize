@@ -6,4 +6,4 @@ before_script:
   - npm install
 
 script:
-  - /node_modules/.bin/mocha
+  - ./node_modules/.bin/mocha
