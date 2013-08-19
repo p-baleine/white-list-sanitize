@@ -25,9 +25,13 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "expect.js": "*"
+    "expect.js": "*",
+    "blanket": "*"
   },
   "scripts": {
-    "postinstall": "wget http://code.jquery.com/jquery.js -O vendor/jquery.js"
+    "postinstall": "wget http://code.jquery.com/jquery.js -O vendor/jquery.js",
+    "blanket": {
+      "pattern": "white-list-sanitize.js"
+    }
   }
 }
