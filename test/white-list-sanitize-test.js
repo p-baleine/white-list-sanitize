@@ -38,7 +38,7 @@ describe('white-list-sanitize', function() {
         allowedElements: {
           'div': true,
           'iframe': {
-            'only': function($elt) {
+            only: function($elt) {
               return /^\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9]+$/.test($elt.attr('src'));
             }
           }
@@ -48,7 +48,11 @@ describe('white-list-sanitize', function() {
 
       sanitize(input, opts, function(err, res) {
         expect(err).to.be(null);
-        expect(res).to.match(/<div>\s*<iframe src="\/\/www.youtube.com\/embed\/N9qV3OvYuJY"><\/iframe><\/div>/);
+        expect(res).to.match(new RegExp([
+          '<div>',
+          '\\s\+<iframe src="//www.youtube.com/embed/N9qV3OvYuJY"></iframe>',
+          '</div>'
+        ].join('')));
         done();
       });
     });
